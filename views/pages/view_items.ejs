@@ -1,0 +1,64 @@
+<%- include("../partials/header")%>
+
+<div class="container">
+  <div class="page-inner">
+    <div class="page-header">
+      <h3 class="fw-bold mb-3">Items</h3>
+      <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+          <a href="/">
+            <i class="icon-home"></i>
+          </a>
+        </li>
+        <li class="separator">
+          <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0)">Items</a>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <!-- <div class="card-header">
+            <div class="card-title">View SubCategory</div>
+          </div> -->
+          <div class="card-body">
+            <table class="table ">
+              <thead>
+                <tr> 
+                  <th scope="col" class="">Sr. No.</th>
+                  <th scope="col" class="text-center">Image</th>
+                  <th scope="col">Items</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% let count = 0;
+                data.map((item,index)=>{
+                let{image,itemsname,id} = item 
+                count++;
+                %>
+                <tr>
+                  <td style="width: 10px;"><%= count %></td>
+                  <td class="text-center" style="width: 100px;">
+                    <img class="rounded" src="../<%= image %>" alt="<%= itemsname %>" height="100%" width="90px">
+                  </td>
+                  <td><%= itemsname %></td>
+                  <td style="width: 250px;">
+                    <a href="./delete_items/<%= id %>" class="btn btn-danger">Delete </a>
+                    <a href="./edit_items/<%= id %>" class="btn btn-success">Edit </a>
+                  </td>
+                </tr>
+                <% })%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../partials/footer")%>

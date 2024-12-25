@@ -1,0 +1,258 @@
+/* styles.css */
+
+/* General body styles */
+body {
+  background-color: #f8f9fa; /* Light background color */
+  font-family: Arial, sans-serif; /* Font style */
+}
+
+/* Container styles */
+.container {
+  margin-top: 50px; /* Space from the top */
+}
+
+/* Form title styles */
+h2 {
+  color: #343a40; /* Dark text color */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+/* Form group styles */
+.form-group label {
+  font-weight: bold; /* Bold labels */
+  color: #495057; /* Darker text color for labels */
+}
+
+/* Input field styles */
+.form-control {
+  border: 1px solid #ced4da; /* Light border */
+  border-radius: 0.25rem; /* Rounded corners */
+  transition: border-color 0.2s; /* Smooth transition for border color */
+}
+
+.form-control:focus {
+  border-color: #80bdff; /* Border color on focus */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Shadow effect on focus */
+}
+
+/* Button styles */
+.btn {
+  background-color: #007bff; /* Primary button color */
+  border: none; /* No border */
+  border-radius: 0.25rem; /* Rounded corners */
+  padding: 10px; /* Padding for the button */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Link styles */
+a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* No underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Text center styles */
+.text-center {
+  text-align: center; /* Center text */
+}
+
+/* Margin top styles */
+.mt-3 {
+  margin-top: 1rem; /* Margin top */
+}
+
+.mt-5 {
+  margin-top: 3rem; /* Larger margin top */
+}
+
+/* profile page */
+/* style.css */
+
+/* Optional custom styles for the profile page */
+
+.container {
+  margin-top: 50px;
+}
+
+.img-fluid {
+  max-width: 200px;
+}
+
+.badge {
+  margin-left: 10px;
+}
+
+/* Additional Custom Styles */
+
+/* Customize the user avatar */
+.user-avatar {
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the social media icons */
+.social-icon {
+  font-size: 24px;
+  color: #333;
+  margin-right: 10px;
+}
+
+/* Customize the button styles */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+/* ... and so on */
+
+/* style.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+/* User Information Section */
+.user-info {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.user-details {
+  margin-bottom: 20px;
+}
+
+.user-details h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.user-details p {
+  margin-bottom: 5px;
+}
+
+/* Personal Information Section */
+.personal-info {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.personal-info h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.personal-info label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.personal-info input[type="text"],
+.personal-info input[type="email"],
+.personal-info input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.personal-info .badge {
+  margin-left: 10px;
+}
+
+/* Social Media Section */
+.social-media {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.social-media h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.social-media input[type="url"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button Styles */
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-4,
+  .col-md-8 {
+    width: 100%;
+  }
+}
+
+.headcolor {
+  background-color: #6861ce !important;
+}

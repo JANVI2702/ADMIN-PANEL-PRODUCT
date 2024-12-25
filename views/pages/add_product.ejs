@@ -1,0 +1,107 @@
+<%- include('../partials/header')%>
+
+  <div class="container">
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-3">Add Product</h3>
+        <ul class="breadcrumbs mb-3">
+          <li class="nav-home">
+            <a href="/">
+              <i class="icon-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="/product/view_product">Products</a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)">Add Product</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <form action="/product/add_product" method="post" enctype="multipart/form-data">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="price">Price</label>
+                      <input type="number" class="form-control" id="price" name="price" placeholder="Enter price in ₹"
+                        required />
+                    </div>
+                    <div class="form-group">
+                      <label for="categoryId">Select Category</label>
+                      <select class="form-select" aria-label="Default select example" id="categoryId" name="categoryId"
+                        required>
+                        <option value="" disabled selected>
+                          Select Category
+                        </option>
+                        <% categories.map((category)=> { %>
+                          <option value="<%= category.id %>">
+                            <%= category.categoryname %>
+                          </option>
+                          <% })%>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="subcategoryId">Select Sub Category</label>
+                      <select class="form-select" aria-label="Default select example" id="subcategoryId"
+                        name="subcategoryId" required>
+                        <option value="" disabled selected>
+                          Select Sub Category
+                        </option>
+                        <% subcategories.map((subcategory)=> { %>
+                          <option value="<%= subcategory.id %>">
+                            <%= subcategory.subcategoryname %>
+                          </option>
+                          <% })%>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="itemsId">Select Items</label>
+                      <select class="form-select" aria-label="Default select example" id="itemsId"
+                        name="itemsId" required>
+                        <option value="" disabled selected>
+                          Select Items
+                        </option>
+                        <% items.map((item)=> { %>
+                          <option value="<%= item.id %>">
+                            <%= item.itemsname %>
+                          </option>
+                          <% })%>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <textarea class="form-control" id="comment" rows="5" name="description"
+                        placeholder="Enter here..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="image">Upload Image</label>
+                      <input type="file" class="form-control" name="image" required />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../partials/footer")%>

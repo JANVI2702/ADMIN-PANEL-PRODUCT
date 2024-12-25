@@ -1,0 +1,96 @@
+<%- include('../partials/header')%>
+
+  <div class="container">
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-3">Update Items</h3>
+        <ul class="breadcrumbs mb-3">
+          <li class="nav-home">
+            <a href="/">
+              <i class="icon-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="/items/view_items">Items</a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)">Update Items</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <form class="form-horizontal" action="/items/edit_items/<%= items.id %>" method="post"
+              enctype="multipart/form-data">
+              <!-- <div class="card-header">
+              <div class="card-title">Update Category</div>
+            </div> -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="itemsname">Name</label>
+                      <input type="text" class="form-control" value="<%= items.itemsname %>"
+                        name="itemsname" placeholder="Enter items Name" required />
+                    </div>
+                    <div class="form-group">
+                      <img class="rounded" src="../../<%= items.image %>" alt="<%= items.itemsname %>"
+                        width="100" />
+                      <input type="hidden" name="oldImage" value="<%= items.image %>" />
+                    </div>
+                    <div class="form-group">
+                      <label for="image">Image</label>
+                      <input type="file" class="form-control" name="image" />
+                    </div>
+                    <!-- category -->
+                    <div class="form-group">
+                      <label for="categoryId">Select Category</label>
+                      <select class="form-select" aria-label="Default select example"
+                      name="categoryId" id="categoryId" required>
+                      <option value="" disabled>
+                        Select Category
+                      </option>
+                      <% categories.map((category)=> { %>
+                        <option value="<%= category._id %>" <%= category._id.equals(items.categoryId._id) ? 'selected' : '' %>>
+                        <%= category.categoryname %>
+                        </option>
+                        <% })%>
+                      </select>
+                    </div>
+                    <!-- subcategory -->
+                     <div class="form-group">
+                      <label for="subcategory">Select Sub Category</label>
+                      <select class="form-select" aria-label="Default select example"
+                      name="subcategoryId" id="subcategoryId" required>
+                      <option value="" disabled>
+                        Select Sub Category
+                      </option>
+                      <% subcategories.map((subcategory)=> { %>
+                        <option value="<%= subcategory._id %>" <%= subcategory._id.equals(items.subcategoryId._id) ? 'selected' : '' %>>
+                        <%= subcategory.subcategoryname %>
+                        </option>
+                        <% })%>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <button class="btn btn-primary" type="submit">Update</button>
+              </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <%- include("../partials/footer")%>

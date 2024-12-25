@@ -1,0 +1,102 @@
+<%- include('../partials/header')%>
+
+  <div class="container">
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-3">Update Product</h3>
+        <ul class="breadcrumbs mb-3">
+          <li class="nav-home">
+            <a href="/">
+              <i class="icon-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="/product/view_product">Products</a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)">Update Product</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <form class="form-horizontal" action="/product/edit_product/<%= product.id %>" method="post"
+              enctype="multipart/form-data">
+              <!-- <div class="card-header">
+                <div class="card-title">Update Product</div>
+              </div> -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" value="<%= product.name %>" name="name"
+                        placeholder="Enter Product Name" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="price">Price</label>
+                      <input type="number" class="form-control" value="<%= product.price %>" name="price" required />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <textarea class="form-control" id="comment" rows="5" name="description"
+                        required><%= product.description %></textarea>
+                    </div>
+                    <div class="form-group">
+                      <img class="rounded" src="../../<%= product.image %>" alt="<%= product.name %>" width="100" />
+                      <input type="hidden" name="oldImage" value="<%= product.image %>" />
+                    </div>
+                    <div class="form-group">
+                      <label for="image">Image</label>
+                      <input type="file" class="form-control" name="image" />
+                    </div>
+                    <div class="form-group">
+                      <label for="category">Select Category</label>
+                      <select class="form-select" aria-label="Default select example"
+                      name="categoryId" id="categoryId" required>
+                      <option value="" disabled>
+                        Select Category
+                      </option>
+                      <% categories.map((category)=> { %>
+                        <option value="<%= category._id %>" <%= category._id.equals(product.categoryId._id) ? 'selected' : '' %>>
+                        <%= category.categoryname %>
+                        </option>
+                        <% })%>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="subcategory">Select Sub Category</label>
+                      <select class="form-select" aria-label="Default select example"
+                      name="subcategoryId" id="subcategoryId" required>
+                      <option value="" disabled>
+                        Select Sub Category
+                      </option>
+                      <% subcategories.map((subcategory)=> { %>
+                        <option value="<%= subcategory._id %>" <%= subcategory._id.equals(product.subcategoryId._id) ? 'selected' : '' %>>
+                        <%= subcategory.subcategoryname %>
+                        </option>
+                        <% })%>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <button class="btn btn-primary" type="submit">Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../partials/footer")%>

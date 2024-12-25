@@ -1,0 +1,119 @@
+<%- include('./partials/header')%>
+
+  <div class="container">
+    <div class="page-inner">
+      <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+        <div>
+          <h3 class="fw-bold mb-3">Admin Product</h3>
+          <!-- <h6 class="op-7 mb-2">
+          <a href="#">Product Category</a>
+        </h6> -->
+        </div>
+        <div class="ms-md-auto py-2 py-md-0">
+          <a href="/" class="btn btn-label-info btn-round me-2">Admin</a>
+          <a href="/category/view_category" class="btn btn-primary btn-round">Product Category</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <div class="card card-stats card-round">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-icon">
+                  <div class="icon-big text-center icon-primary bubble-shadow-small">
+                     <i class="fas fa-list-ul"></i>
+                  </div>
+                </div>
+                <div class="col col-stats ms-3 ms-sm-0">
+                  <div class="numbers">
+                    <p class="card-category">Categories</p>
+                    <h4 class="card-title"><%= categorycount %></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="card card-stats card-round">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-icon">
+                  <div class="icon-big text-center icon-info bubble-shadow-small">
+                    <i class="fas fa-indent"></i>
+                  </div>
+                </div>
+                <div class="col col-stats ms-3 ms-sm-0">
+                  <div class="numbers">
+                    <p class="card-category">Subcategories</p>
+                    <h4 class="card-title"><%= subcategorycount %></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="card card-stats card-round">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-icon">
+                  <div class="icon-big text-center icon-success bubble-shadow-small">
+                    <i class="fas fa-luggage-cart"></i>
+                  </div>
+                </div>
+                <div class="col col-stats ms-3 ms-sm-0">
+                  <div class="numbers">
+                    <p class="card-category">Items</p>
+                    <h4 class="card-title"><%= itemscount %></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="card card-stats card-round">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-icon">
+                  <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                    <i class="fab fa-patreon"></i>
+                  </div>
+                </div>
+                <div class="col col-stats ms-3 ms-sm-0">
+                  <div class="numbers">
+                    <p class="card-category">Product</p>
+                    <h4 class="card-title"><%= productcount %></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+     <h3>Products</h3>
+        <% products.forEach(product=> { %>
+          <div class="col-md-6 col-xl-3 col-xxl-2">
+            <div class="card">
+              <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>">
+              <div class="card-body">
+                <h5 class="card-title text-center">
+                  <%= product.name %>
+                </h5>
+                <p class="text-center"><i class="fas fa-rupee-sign"></i> <%= product.price %>
+                </p>
+                <p class="text-center">
+                  <%= product.description %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+    
+        
+    </div>
+  </div>
+  <%- include('./partials/footer')%>

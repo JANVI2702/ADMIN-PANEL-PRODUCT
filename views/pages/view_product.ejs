@@ -1,0 +1,73 @@
+<%- include("../partials/header")%>
+
+  <div class="container">
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-3">Products</h3>
+        <ul class="breadcrumbs mb-3">
+          <li class="nav-home">
+            <a href="/">
+              <i class="icon-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)">Products</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <!-- <div class="card-header">
+              <div class="card-title">View Product</div>
+            </div> -->
+            <div class="card-body">
+              <table class="table ">
+                <thead>
+                  <tr>
+                    <th scope="col" class="">Sr. No.</th>
+                    <th scope="col" class="text-center">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% let count=0; 
+                    data.map((product,index)=>{
+                    let{image,name,price,id} = product
+                    count++;
+                    %>
+                    <tr>
+                      <td style="width: 20px;">
+                        <%= count %>
+                      </td>
+                      <td class="text-center" style="width: 100px;">
+                        <img class="rounded" src="../<%= image %>" alt="<%= name %>" width="90px" height="100%">
+                      </td>
+                      <td>
+                        <%= name %>
+                      </td>
+                      <td style="width: 40px;">
+                        <%= price %>₹
+                      </td>
+
+                      <td style="width: 250px;">
+                        <a href="./delete_product/<%= id %>" class="btn btn-danger">Delete </a>
+                        <a href="./edit_product/<%= id %>" class="btn btn-success">Edit </a>
+                      </td>
+                    </tr>
+                    <% })%>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../partials/footer")%>
